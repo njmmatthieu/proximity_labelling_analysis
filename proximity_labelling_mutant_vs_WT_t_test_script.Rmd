@@ -67,7 +67,7 @@ Comparisons between CFTR mutants and WT condition were performed based on the LF
 
 
 ```{r}
-turbo_lfq_log_pl <- read.table("raw_data/Turbo_LFQintensities_log2_export.txt",
+turbo_lfq_log_pl <- read.table("../raw_data/Turbo_LFQintensities_log2_export.txt",
                                sep = "\t",
                                header = T)
 turbo_lfq_log_pl_df <- turbo_id_preprocess_all(turbo_lfq_log_pl,
@@ -155,8 +155,8 @@ volcano_turbo_G551D <- ggplot(turbo_filtered, aes(x = diff.mean.G551D.WT,
   ggtitle("TurboID - G551D") +
   guides(fill="legend")+
   scale_x_continuous(breaks=c(-4, -2, 0, 2, 4), limits=c(-4.5,4.5))+
-  labs(y=expression(-Log[10]~p-value),
-       x=expression(Log[2]~FC))
+  labs(y=expression(-log[10]~p-value),
+       x=expression(log[2]~FC))
 
 volcano_turbo_G551D
 ```
@@ -221,13 +221,13 @@ volcano_turbo_W1282X <- ggplot(turbo_filtered, aes(x = diff.mean.W1282X.WT,
   ggtitle("TurboID - W1282X") +
   guides(fill="legend")+
   scale_x_continuous(breaks=c(-4, -2, 0, 2, 4), limits=c(-4.5,4.5))+
-  labs(y=expression(-Log[10]~p-value),
-       x=expression(Log[2]~FC))
+  labs(y=expression(-log[10]~p-value),
+       x=expression(log[2]~FC))
 
 volcano_turbo_W1282X
 ```
 
-# 2. APEX
+# 2. APEX2
 
 ## 2.1 Data Preprocessing
 
@@ -281,7 +281,7 @@ Comparisons between CFTR mutants and WT condition were performed based on the LF
 
 
 ```{r}
-apex_lfq_log_pl <- read.table("raw_data/Apex_LFQintensities_log2_export.txt",
+apex_lfq_log_pl <- read.table("../raw_data/Apex_LFQintensities_log2_export.txt",
                                sep = "\t",
                                header = T)
 apex_lfq_log_pl_df <- apex_preprocess_all(apex_lfq_log_pl,
@@ -363,11 +363,11 @@ volcano_apex_G551D <- ggplot(apex_filtered, aes(x = diff.mean.G551D.WT,
   theme(legend.position="none",
         text=element_text(size = 12),
         title = element_text(size = 12))+
-  ggtitle("APEX - G551D") +
+  ggtitle("APEX2 - G551D") +
   guides(fill="legend")+
   scale_x_continuous(breaks=c(-4, -2, 0, 2, 4), limits=c(-4.5,4.5))+
-  labs(y=expression(-Log[10]~p-value),
-       x=expression(Log[2]~FC))
+  labs(y=expression(-log[10]~p-value),
+       x=expression(log[2]~FC))
 
 volcano_apex_G551D
 ```
@@ -427,11 +427,11 @@ volcano_apex_W1282X <- ggplot(apex_filtered, aes(x = diff.mean.W1282X.WT,
   theme(legend.position="none",
         text=element_text(size = 12),
         title = element_text(size = 12))+
-  ggtitle("APEX - W1282X") +
+  ggtitle("APEX2 - W1282X") +
   guides(fill="legend")+
   scale_x_continuous(breaks=c(-4, -2, 0, 2, 4), limits=c(-4.5,4.5))+
-  labs(y=expression(-Log[10]~p-value),
-       x=expression(Log[2]~FC))
+  labs(y=expression(-log[10]~p-value),
+       x=expression(log[2]~FC))
 
 volcano_apex_W1282X
 ```
